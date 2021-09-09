@@ -1,0 +1,19 @@
+Huong dan debug trong python vs code
+
+1 cấu hình debug python scipt
+Từ Vistual Studio Code => Bấm vào biểu tượng 
+con bọ ở Panel bên phải => Bấm tiếp vào biểu 
+tượng Setting => 
+Chọn “Python File”
+Nó sẽ tạo cho ta 1 file lauch.json ở ngay thư mục của project.
+
+2. Debug Python Script
+
+Một số phím tắt debug:
+
+F5: Tiếp tục tới breakpoint tiếp theo (Continue)
+F10: Tiếp tục tới line tiếp theo (Step over)
+F11: Trường hợp line có gọi tới 1 function thì sẽ nhảy vào phần source của function đó. (Step Into)
+Shift + F11: (Step out) cái này mình chưa rõ cách dùng lắm, sẽ cập nhật lại sau
+Ctrl + Shift + F5: Debug lại (Restart)
+Shift + F5: Dừng debug (Stop)

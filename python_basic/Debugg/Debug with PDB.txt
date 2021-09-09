@@ -1,0 +1,65 @@
+Debug with PDB
+Debug tiện ích mà mọi lập trình viên sẽ phải dùng
+
+Cách debug đơn giản thường là dùng print nhưng nó
+chỉ hữu dụng với những đoạn code nhỏ và cho người
+mới 
+
+Hãy sử dụng debug để gỡ lỗi một cách chuyên nghiệp
+không cần sửa code trong, thao tác ngoài code, 
+nhiều tiện ích như tạm dừng chương trình, xem các
+biến trong môi trường cụ thể
+
+Một số câu lệnh cơ bản trong pdb
+python -m pdb python.py
+(pdb) list 
+(pdb) list 4,10 - bat dau 4 va ket thuc 10
+(pdb) quit, exit -
+
+
+===============
+
+Breakpoint
+là các vị trí cụ thể mà khai báo trong code,, code
+chạy đến đó và sau đó tạm dừng những điểm này được 
+tự động gán số bởi PDB
+
+các tuỳ chọn với breakpoint: tạo theo dòng, hàm, 
+câu điều kiện 
+
+(pdb) break love.py:9
+(pdb) break love.ten_ham_trong_file_love
+<nó sẽ trỏ đến dòng đầu tiên trong hàm nếu break
+point đặt ở hàm>
+(pdb) break love.py:6, crush == "Thi"
+(đặt breakpoint tại dòng 6 file love.py và dừng
+nếu điều kiện biến crush == Thi thoả mãn)
+
+====
+Một số câu lệnh khác với breakpoint
+(pdb) break
+(pdb) disable 2
+(breakpoint số 2 bị tạm ngắt)
+(pdb) enable 2
+(breakpoint số 2 được khởi động lại)
+(pdb) clear 1
+(xoá breakpoint thứ 1)
+(pdb) clear 
+xoá tất
+====
+lệnh continue
+(pdb) continue
+lệnh này sẽ thực thi cho đến khi chạm breakpoint 
+hoặc kết thúc
+====
+Next và Step  trong debug
+
+Step và next sử dụng lặp trong suốt file code của 
+ta theo từng dòng. Sự khác biệt là
+Khi lặp step nếu gặp lệnh gọi hàm nó sẽ di chuyển
+đến dòng đầu tiên  nơi định nghĩa hàm và cho ta biết
+chính xác những gì có ở bên trong hàm
+
+Trong khi next khi được gọi nó sẽ chạy tất cả các 
+dòng của hàm trong đó trong một lần duy nhất và tạm
+dừng ở lệnh gọi hàm tiếp theo

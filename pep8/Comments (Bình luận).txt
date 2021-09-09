@@ -1,0 +1,31 @@
+Dưới đây là một vài điểm lưu ý chính cần nhớ khi thêm bình luận vào đoạn code của bạn:
+
+    Giới hạn độ dài của dòng bình luận và chuỗi văn bản tối đa 72 kí tự.
+    Sử dụng một câu hoàn chỉnh, bắt đầu với chữ viết hoa.
+    Hãy chắc chắn là bạn sẽ cập nhật lời bình khi bạn thay đổi đoạn code của mình.
+
+Bình luận khối:
+    Thụt lề của khối bình luận cùng mức với đoạn code mà nó miêu tả.
+    Bắt đầu mỗi dòng với kí tự #, theo sau nó là một dấu cách đơn.
+    Tách các đoạn trong khối bình luận bằng một dòng chỉ chứa kí tự #.
+
+for i in range(0, 10):
+    # Loop over i ten times and print out the value of i, followed by a
+    # new line character
+    print(i, '\n')
+
+def quadratic(a, b, c, x):
+    # Calculate the solution to a quadratic equation using the quadratic
+    # formula.
+    #
+    # There are always two solutions to a quadratic equation, x_1 and x_2.
+    x_1 = (- b+(b**2-4*a*c)**(1/2)) / (2*a)
+    x_2 = (- b-(b**2-4*a*c)**(1/2)) / (2*a)
+    return x_1, x_2
+
+Inline comments (Bình luận trên cùng một dòng)
+    Sử dụng inline comment một cách hạn chế.
+    Viết inline comment trên cùng dòng với câu lệnh mà chúng nhắm tới.
+    Tách inline comment với câu lệnh bằng hai hay nhiều dấu cách.
+    Bắt đầu inline comment với dấu # và một dấu cách, như khối bình luận.
+    Đừng sử dụng chúng để giải thích những điều hiển nhiên.

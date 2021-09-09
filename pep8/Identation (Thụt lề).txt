@@ -1,0 +1,6 @@
+ PEP 8 khuyến nghị bạn luôn sử dụng 4 khoảng trống liên tiếp để biểu thị thụt lề.
+
+ fuk: giữ các dòng dưới 79 ký tự
+
+ 
+

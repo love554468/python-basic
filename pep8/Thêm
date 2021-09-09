@@ -1,0 +1,16 @@
+# Not recommended
+if word[:3] == 'cat':
+    print('The word starts with "cat"')
+
+# Recommended
+if word.startswith('cat'):
+    print('The word starts with "cat"')
+
+
+if file_name.endswith('jpg'):
+    print('The file is a JPEG')
+
+# Not recommended
+if file_name[-3:] == 'jpg':
+    print('The file is a JPEG')
+

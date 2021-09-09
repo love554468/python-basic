@@ -1,0 +1,13 @@
+mình có thể dùng idle để test code với thư viện 
+
+os
+import os 
+
+làm việc với file
+
+os.system('dir')
+os.system('cls')
+open
+chdir
+rename
+close

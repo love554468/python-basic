@@ -1,0 +1,22 @@
+Đảo ngược chuỗi trong Python
+Viết Hoa ký tự đầu tiên của mỗi từ
+Tìm các phần tử duy nhất trong một chuỗi
+In một Chuỗi hoặc một List n lần
+List comprehension
+Hoán đổi giá trị giữa hai biến trong Python
+Tách một chuỗi thành một list
+Kết hợp một danh sách các chuỗi thành một chuỗi
+Kiểm tra một chuỗi có phải chuỗi đối xứng
+Tình số lần xuất hiện của các phần tử trong một List
+===
+Tìm xem hai chuỗi có đảo chữ không
+Sử dụng Khối try-except-else
+Sử dụng liệt kê (Enumerate) để nhận các cặp index / value
+Kiểm tra mức sử dụng bộ nhớ của một đối tượng
+Hợp nhất hai từ điển
+Tính thời gian thực hiện để thực thi một đoạn code trong Python
+Trải phẳng list trong list
+Lấy mẫu từ một List
+Chuyển đổi một số thành danh sách các chữ số trong Python
+Kiểm tra tính duy nhất
+Tổng kết

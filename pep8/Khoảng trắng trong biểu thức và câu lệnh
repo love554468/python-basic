@@ -1,0 +1,31 @@
+Khoảng trắng xung quanh toán tử nhị phân
+    Bao quanh các toán tử nhị phân với một khoảng trắng ở hai bên:
+Chú ý: Khi dấu = được sử dụng để gán cho một giá trị mặc định cho một đối số hàm thì không nên bao quanh nó với khoảng trắng.
+
+ # Recommended
+y = x**2 + 5
+z = (x+y) * (x-y)
+
+# Not Recommended
+y = x ** 2 + 5
+z = (x + y) * (x - y)
+
+# Not recommended
+if x > 5 and x % 2 == 0:
+    print('x is larger than 5 and divisible by 2!')
+
+# Recommended
+if x>5 and x%2==0:
+    print('x is larger than 5 and divisible by 2!')
+
+# Recommended
+my_list = [1, 2, 3]
+
+# Not recommended
+my_list = [ 1, 2, 3, ]
+
+# Recommended
+print(x, y)
+
+# Not recommended
+print(x , y)

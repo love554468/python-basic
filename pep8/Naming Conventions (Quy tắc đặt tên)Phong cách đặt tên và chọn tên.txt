@@ -1,0 +1,21 @@
+1. Hàm số, biến, method, modul : thì mình sẽ đặt tên theo các
+chữ cái thường, phân tách các từ bởi dấu _
+vd: function, my_function, var, my_var, class_method,
+method, modul.py, my_modul.py
+
+2. Tên lớp
+Chữ cái đầu của mỗi từ là in hoa.
+vd : MyClass, TeamA
+
+3. Gói:
+viết ngắn gọn sử dụng chữ thường 
+
+4. tên hằng số:
+Các từ viết hoa hết và phân cách bởi dấu gạch dưới
+vd: CONST_A,..
+
+===============
+
+Chọn tên phù hợp: thường sẽ đặt tên theo chức năng của nó.
+
+vd : thay vì đặt solGt(n) -> tinh_giaithua(num)

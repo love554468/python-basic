@@ -1,0 +1,23 @@
+tìm số này
+\b\d+\b
+123
+
+
+tìm ngày tháng 
+\b\d{1,2}\/d{1,2}\/d{1,2}
+21/8/2000
+
+tifm ngày nâng cao
+
+\b(0?[1-9]|[12\d]|3[01])[\/\-.](0?[1-9]|[12\d]|3[01])[\/\-.](\d{2}|\d{4})\b
+
+mọi kí tự trong regex đặt trong cặp dấu ngoặc () sẽ tạo lên 1 group (match) được kí hiệu là $1,$2,..
+test trong phần subtittution
+
+Cách tạo ra code để dùng RegEx trong các ngôn ngữ lập trình
+RegEx là bộ cú pháp, tuy nhiên để áp dụng nó vào các ngôn ngữ lập trình lại phải tuân thủ theo các thư viện và quy tắc lập trình để lấy 
+ra được các Group đã capture (thu) được. Hãy xem các tạo code ngay sau đây:
+
+cách lấy chuỗi bất kì .*?
+<label ádfsafasd>tádljfdas<\label>
+<label .*? >(.*?)<\/label>

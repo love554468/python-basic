@@ -1,0 +1,23 @@
+Blank lines (Dòng Trống)
+- Giữa 2 lớp cách nhau 2 dòng
+- Giữa các hàm trong class cách nhau 1 dòng 
+
+Tối đa hoá độ dành dòng :
+vd 
+def function(arg_one, arg_two,
+             arg_three, arg_four):
+    return arg_one
+
+from mypkg import example1, \
+    example2, example3
+
+total = (first_variable
+         + second_variable
+         - third_variable)
+
+# Not Recommended
+total = (first_variable +
+         second_variable -
+         third_variable)
+
+

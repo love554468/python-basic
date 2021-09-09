@@ -1,0 +1,25 @@
+Debug tản mạn
+case lỗi dữ liệu ko có exception 
+
+điều kiện debug nhanh nắm rõ kiến trúc project, 
+nắm được luồn xử lý
+
+đọc thêm
+===
+2. Case gây lỗi dữ liệu nhưng không có exception
+Có exception nhưng không cụ thể giống như case 1 (Không chỉ ra file trong project bị lỗi) hoặc chỉ gây lỗi dữ liệu. Trước đây, với những case này mình mò mãi k ra thì toàn nghĩ là do thư viện nào đó lỗi và report đổ lỗi cho thư viện, nhưng thực ra là do code của mình, chỉ là chưa tìm và đọc kỹ tới. Với case như này thì lúc này sẽ cần dùng các tool debug để chặn khoảng. Điều kiện để tìm ra nhanh là nắm rõ kiến trúc project, nắm được luồng xử lý.
+
+Chiến thuật chỗ này cũng đơn giản thôi. Dựa vào nắm vững kiến trúc và luồng hoạt động để phán đoán các điểm có thể code sai gây lỗi data. Nếu có nhiều vị trí quá thì đặt các khoảng debug để chặn và kiểm tra. Sau khi tìm ra được khoảng gây lỗi (Khoảng gây lỗi là khoảng nằm giữa 2 vị trí debug mà excepted ở 2 điểm đó 1 thỏa mãn, 1 không). Từ đó thì debug nhỏ hơn tiếp trong khoảng đó cho tới dòng khi tòi ra dòng lỗi thì thôi, hoặc đọc từng dòng code cũng được ✌️
+
+Nói chay thế này thôi chứ để áp dụng vào cũng phải kinh qua vài ba bug thì mới hiểu đc 😄
+
+Chia sẻ có vậy thôi đấy. Nhiều hệ thống yêu cầu không bị crash cho mọi exception nên các bạn hay code kiểu try ... except Exception. Exception trong python mà cái to nhất và chung nhất nên các bạn code xử lý chỗ này nên cho nó thêm một dòng print ra exception thực tế hiện tại là cái gì và dựa vào đó mà hiểu được thực sự exception mình đang gặp là gì giống như nầy
+
+import traceback
+
+try:
+    ....
+exception Exception as e:
+    traceback.print_exc()
+
+

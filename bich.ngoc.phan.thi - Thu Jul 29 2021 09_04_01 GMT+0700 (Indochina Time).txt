@@ -1,0 +1,59 @@
+Tượng di chuyển theo đường chéo và không bị hạn chế về khoảng cách, tức là có thể di chuyển một, hai, hoặc bao nhiêu ô theo đường chéo cũng được. 
+Tuy nhiên, yếu tố cản trở đó là sự có mặt của một quân khác trên đường đi và độ dài đường chéo. Sau khi ăn quân đối phương Tượng sẽ được đặt tại vị trí của quân đó.
+
+Các quân Tượng có thể phân biệt theo cánh xuất phát ban đầu của chúng, như là Tượng cánh Vua và Tượng cánh Hậu. 
+Như một hệ quả của đặc điểm di chuyển theo đường chéo, mỗi quân Tượng luôn luôn chỉ có thể duy trì trên một loại ô màu, trắng hoặc đen. Bởi vậy, chúng cũng thường được gọi là Tượng ô trắng và Tượng ô đen.
+
+Giải thuật:
+1. Giả sử chúng ta đang phải làm việc với một bàn cờ vuông kích thước NxN. Một bàn cờ vuông bình thường thì bao giờ mỗi ô trên đó cũng được tô bằng 2 màu: đen hoặc trắng (hoặc bằng cặp màu nào đó).
+ Phương pháp tô theo cách sau: nếu một ô màu đen/trắng thì các các ô kề cạnh với nó sẽ có màu trắng/đen. Thí dụ theo hình vẽ dưới là một cách tô trong 2 cách có thể (chỉ cần tô một ô là xác định được màu 
+của tất cả các ô còn lại, vì mỗi ô chỉ có thể là màu đen hoặc trắng nên cũng chỉ có 2 cách tô màu cho toàn bàn cờ
+2. Sau khi đã tô màu cho tất cả các ô trên bàn cờ theo phương pháp trên, ta có thể rút ra một nhận xét: “các con tượng được đặt trên các ô màu đen sẽ không thể khống chế các con tượng nằm trên các ô màu 
+trắng và ngược lại các con tượng được đặt trên các ô màu trắng cũng không thể khống chế các con tượng nằm trên các ô màu đen”. Nhận xét này gợi ý cho chúng ta một phương pháp giải bài toán con tượng. 
+Đó là coi tập các ô trắng và tập các ô đen trên bàn cờ là 2 bàn cờ con độc lập với nhau. Sau đó, ta tính số các thế cờ trên từng bàn cờ con đó rồi tổ hợp các kết quả với nhau thành công thức cuối cùng. 
+Cách tính có thể được trình bày rõ ràng như sau:
+
+Gọi DN(i), TN(i) (i=0, …, K) tương ứng là số các thế cờ chỉ bao gồm i con tượng trên bàn cờ các ô đen và bàn cờ các ô trắng của một bàn cờ vuông NxN và thỏa mãn không có hai con tượng nào có thể khống chế nhau
+3. Vấn đề còn lại giờ đây là tìm ra công thức tính TN(i) và DN(j).
+
+Vẫn là bàn cờ được tô màu ở trên, nhưng chúng ta điền thêm các con số vào mỗi ô theo cách: ô ở dòng i cột j sẽ mang số j-i. Ta nhận thấy những ô cùng màu thì các số trên nó cũng cùng tính chẵn lẻ, những ô cùng nằm trên một đường chéo xuôi (đường chéo có hướng từ đình trái-trên xuống đỉnh phải-dưới của bàn cờ) thì cùng mang những số có giá trị như nhau. Từ đây, chúng ta sẽ đánh số các đường chéo xuôi theo số của các ô trên nó, ví dụ ta có đường chéo số 0, số 1, -1,...
+4. Gọi F[m, k] (m, k ≥ 0) là số các thế cờ chỉ gồm k con tượng (hay số cách sắp đặt k con tượng) trên các ô thuộc các đường chéo số
+
+
+
+của bàn cờ vuông NxN, sao cho không có hai con tượng nào có thể khống chế nhau (hay trên mỗi đường chéo, kể cả xuôi và ngược, chỉ có tối đa một con tượng).
+
+Ví dụ, với bàn cờ 8x8 như hình vẽ trên, F[2, 4] là số cách sắp đặt 4 con tượng trên các ô thuộc các đường chéo -6, -4, -2, 2, 4, 6 sao cho không có hai con tượng nào có thể khống chế nhau.
+
+Theo công thức trên, ta cũng thấy nếu đường chéo 0 được tô màu đen thì TN(i) = F[0,i] và DN(i) = F[1, i]
+5. Nếu ta tô màu ngược lại thì S vẫn có dạng như trên vì (hiển nhiên) S không phụ thuộc vào cách ta tô màu. Công thức trên đã gợi ý cho chúng ta đường lối rõ ràng hơn trong việc tìm S. Công việc duy nhất còn lại là tính các F[0, i] và F[1, j] hay nói một cách tổng quát hơn là ta phải đi tính F[m, k] với các số m và k cho trước.
+
+Khi đối mặt với các công thức kiểu dạng F[m, k], phương án đầu tiên mà những người làm toán tin kinh nghiệm sẽ thường nghĩ đến là phương pháp tính truy hồi. Và quả như vậy, chúng ta sẽ tính công thức này theo công thức tính truy hồi.
+
+Phương pháp tính truy hồi, xét về một khía cạnh nào đó thì cũng rất giống phương pháp chứng minh quy nạp toán học. Do đó, bước đầu tiên, ta sẽ giả sử chúng ta đã tính được tất cả các F[i, j] với i = m+1, m+2,..., N-1 và j =0, 1,..., k. Và ta sẽ phải tính F[m, k] từ những công công thức đã đã tính được trước đó. Thực sự thì để tính F[m, k], điều giả sử của ta ở trên là hơi thừa. Thực tế, giả thiết chỉ cần đã tính được F[m+2, k], F[m+2, k-1] và F[m+2, k-2] là đủ.
+
+Như đã nói ở trên, F[m, k] là số cách sắp đặt các con tượng hay là số các thế cờ (thỏa mãn các điều kiện của ta). Do đó, đối tượng mà ta quan tâm ở công thức F[m, k] là số các thế cờ, hay cụ thể là số các thế cờ gồm k quân tượng được sắt đặt trên các đường chéo ±m, ±(m+2), ±(m+4),… Ta sẽ chia tập các thế cờ này thành 4 tập con tương đương với 4 trường hợp sau:
+
+- TH1. Không có con tượng nào được đặt trên đường chéo m và –m. Số các thế cờ trong trường hợp này đơn giản là F[m+2, k].
+
+- TH2. Có 1 con tượng được đặt trên đường chéo m và không có con tượng nào trên đường chéo -m. Ta gọi tập các thế cờ trong trường hợp này là A. Sau đó ta xét các thế cờ đặt k-1 con tượng vào các đường chéo ±(m+2), ±(m+4), ±(m+6),… và ta lại gọi tập các thế cờ này là B. Với mỗi thế cờ thuộc tập B, ta sẽ đếm số ô không bị khống chế trên đường chéo m bởi k-1 con tượng trong thế cờ đó. Vì mỗi con tượng trong thế cờ chỉ có thể khống chế duy nhất một ô trên đường chéo m, nên sô ô bị khống chế trên đường chéo m là k-1. Đường chéo m có tổng cộng N-m ô, từ đây suy ra số ô không bị khống chế trên đường chéo m là N-m-k+1 ô. Trên bất kì N-m-k+1 ô này, ta có thể đặt thêm một con tượng vào thế cờ ta đang xét mà vẫn không có cặp con tượng nào không chế nhau. Như vậy với mỗi thế cờ thuộc tập B tương ứng sẽ có N-m-k+1 thế cờ thuộc tập A. Vậy số thế cờ thuộc tập A sẽ là (N-m-k+1)*F[m+2, k-1].
+
+- TH3. Có 1 con tượng được đặt trên đường chéo -m và không có con tượng nào trên đường chéo m. Lý luận tương tự như trường hợp vừa trên. Số thế cờ trong trường hợp này vân là (N-m-k+1)*F[m+2, k-1].
+
+- TH4. Trên mỗi đường chéo m và –m đều được đặt một con tượng. Lý luận tương tự như trường hợp 2. Trong trường hợp này, số ô không bị không chế trên mỗi đường chéo m và –m sẽ là N-m-k+2. Số ô không bị khống chế tăng lên một so với trường hợp 2 là do chỉ còn k-2 con tượng được đặt trên các đường chéo ±(m+2), ±(m+4), ±(m+6),… Nếu ta đặt một con tượng lên một trong N-m-k+2 ô không bị khống chế của đường chéo m thì trên đường chéo –m chỉ còn N-m-k+1 ô không bị không chế. Nên số cách đặt 2 con tượng lên 2 đường chéo m và –m là (N-m-k+2)*(N-m-k+1) và số thế cờ trong trường hợp 4 này sẽ là (N-m-k+2)*(N-m-k+1)*F[m+2, k-2].
+
+Qua 4 trường hợp trên ta rút ra công thức cho F[m, k] sẽ là: F[m,k] = F[m+2,k] + (N – m – k + 1)*(2*F[m+2,k-1] + (N-m-k+2)*F[m+2,k-2]) (3)
+
+Tuy nhiên không phải lúc nào ta cũng tính F[m, k] theo công thức (3). Vì với một số trường hợp đặc biệt, thì không phải lúc nào ta cũng có thể chia làm 4 trường hợp như trên. Cụ thể với m = 0 thì TH3 và TH4 không tính vì ta chỉ có một hàng 0 nên chỉ đặt được 1 con tượng. Trường hợp đặc biệt thứ 2 là k = 1, khi đó ta chỉ có thể đặt tối đa 1 con tượng lên hai đường chéo m và –m, nên TH4 sẽ không được tính. Nhóm các trường hợp đặc biệt còn lại là các trường hợp rất đơn giản mà ta có thể đưa ngay ra giá trị F[m, k] mà không cần tính toán nhiều. Tóm lại ta sẽ có các công thức tính F[m, k] cho từng trường hợp sau:
+
+Nếu k = 0: F[m,0] = 1 với m >=0
+
+Nếu m = N-1: F[N-1,1] =2; F[N-1,k] = 0 với k > 1
+
+Nếu m = N-2: F[N-2,1] = 4, F[N-2,2] = 2, F[N-2, k] = 0 với k>2
+
+Nếu m = 0: F[m,k] = F[m+2,k] + (N – m – k+1)*F[m+2,k-1]
+
+Nếu k = 1: F[m,k] = F[m+2,k] + (N – m – k+1)*2*F[m+2,k-1]
+
+Còn lại ta tính F[m, k] theo công thức (3).

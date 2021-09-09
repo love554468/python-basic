@@ -1,0 +1,21 @@
+cách sử dụng dấu """ """(1) và " "(2),
+ ''' ''' (3), ' ' (4)
+
+(1) sử dụng viết doc cho các hàm tự định nghĩa
+, (3) không thể viết cho hàm
+
+(2), (4), (1),(3) sử dụng để khai báo chuỗi chữ
+
+đặc biệt (1),(3) khai báo chuỗi 
+chữ có xuống dòng đc
+
+Trên thực tế, bạn có thể đặt một chuỗi ký tự ở
+ bất kỳ vị trí nào của hàm Python:
+
+Tuy nhiên, chỉ có nghĩa đen trong dòng đầu 
+tiên tạo ra một số khác biệt (là tài liệu). 
+Những cái khác giống như không có hoạt động.
+
+
+
+

@@ -1,0 +1,16 @@
+regex with python
+
+re module offers a set of functions that allows 
+us to search a string for a match:
+
+function -> description
+findall - return a list containing all matches
+search return a Match object if there is a
+match anywhere in the string
+split - return a list where the string has been
+split at eatch match
+sub - replaces one or many matches with a string
+
+trong thằng search còn 3 phương thức nữa, string , span, group
+
+sẽ hay dùng nhất ở re là sub 

@@ -1,0 +1,5 @@
+Pep 8 là 1 chuẩn để viết code đẹp theo 1 nguyên tắc được các nhà phát triển đặt ra.
+
+Đó là các quy định về: cách đặt tên file, tên biến tổ chức thư mục, tổ chức code hiệu quả.
+
+Pep8 là chuẩn viết code dành cho python

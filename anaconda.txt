@@ -1,0 +1,9 @@
+conda create --name ten_moi_truong_ao python==3.7.6 ->y
+conda activate ten_moi_truong_aon 
+<installingrasa>
+conda install ujson
+conda install tensorflow->y
+pip install rasa
+rasa init
+
+

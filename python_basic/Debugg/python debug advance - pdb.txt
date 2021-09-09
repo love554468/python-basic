@@ -1,0 +1,8 @@
+python debug advance - pdb
+
+cách lệnh của python debug :
+s,n,c,b,l
+
+giống như pdb thì còn có 1 loại debugg nữa mà
+sử dụng giao diện đồ hoạ tiện cho việc bạn ngại
+dùng dòng lệnh nhiều

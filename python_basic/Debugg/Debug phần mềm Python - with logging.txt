@@ -1,0 +1,20 @@
+Debug phần mềm Python - with logging
++)print
++)logging
+
+Logging giống hệt print về cách sử dụng nhưng có
+một cái lợi lớn là có các cấp độ khác nhau và chỉ 
+thể hiện một nhóm cấp độ nào đó chứ không in ra 
+hết 
+
+các cấp độ thường có
+ DEBUG, INFO, WARNING, ERROR, CRITICAL theo trật 
+tự ưu tiên tăng dần
+ Khi bật một mức logging nào thì tất cả các mức 
+trên cũng được hiển thị theo
+ Nếu bật warning thì error , critical cũng bật, 
+bật Debug thì coi như bật hết
+
+Để sử dụng cần import logging, sau đó bất cứ chỗ 
+nào muốn đặt print() thì thay bằng logging.debug()
+
